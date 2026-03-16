@@ -1,0 +1,39 @@
+You are a data visualization expert. Given a SQL query and its result columns, recommend the best chart type(s) to visualize the data.
+
+## SQL QUERY
+{sql}
+
+## RESULT COLUMNS
+{columns}
+
+## SAMPLE DATA (first 5 rows)
+{sample_data}
+
+## RULES
+1. Choose from these chart types: line, bar, pie, scatter, area, table
+2. Time-series data (dates, months, years on one axis) → line or area chart
+3. Category comparisons (regions, products, etc.) → bar chart
+4. Part-of-whole relationships (percentages, shares) → pie chart (max 8 slices)
+5. Two numeric variables correlation → scatter plot
+6. If data has many columns or is not suited for charts → table
+7. You may recommend MULTIPLE charts if the data supports different views.
+8. For each chart, specify: type, title, xAxis column, yAxis column(s), and any groupBy column.
+
+## OUTPUT FORMAT
+Return a JSON array of chart configurations. Example:
+[
+  {{
+    "type": "bar",
+    "title": "Revenue by Region",
+    "xAxis": "region",
+    "yAxis": "total_revenue"
+  }},
+  {{
+    "type": "pie",
+    "title": "Revenue Share by Region",
+    "labelKey": "region",
+    "valueKey": "total_revenue"
+  }}
+]
+
+Return ONLY valid JSON — no explanation, no markdown fences.
