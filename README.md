@@ -4,7 +4,7 @@ A production-quality Conversational AI system that converts **natural language q
 
 **Ask a question in plain English → get a full dashboard with charts and insights.**
 
----
+--- 
 
 ## Architecture
 
