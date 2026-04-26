@@ -5,7 +5,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from dotenv import load_dotenv
 import os
-
+  
 from app.routes.query_routes import router as query_router
 from app.database.db import engine, Base
 
